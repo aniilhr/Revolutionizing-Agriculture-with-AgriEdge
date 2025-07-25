@@ -1,0 +1,15 @@
+@isTest
+public class OrderStatusUpdaterTest {
+    @isTest
+    static void testShipmentCreationOnDeliveredStatus() {
+        AgriEdge_Order__c order = new AgriEdge_Order__c(Name = 'Test Delivered', Status__c = 'Delivered');
+        insert order;
+
+        Test.startTest();
+        OrderStatusUpdater.updateOrderStatus(new Set<Id>{order.Id});
+        Test.stopTest();
+
+        List<AgriEdge_Shipment__c> shipments = [SELECT Id FROM AgriEdge_Shipment__c WHERE Order__c = :order.Id];
+        System.assertEquals(1, shipments.size());
+    }
+}

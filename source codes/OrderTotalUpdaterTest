@@ -1,0 +1,24 @@
+@isTest
+public class OrderTotalUpdaterTest {
+    @isTest
+    static void testUpdateOrderTotal() {
+        // Create a test order
+        AgriEdge_Order__c order = new AgriEdge_Order__c(Name = 'Test Order');
+        insert order;
+
+        // Create related order item
+        AgriEdge_OrderItem__c item = new AgriEdge_OrderItem__c(
+            AgriEdge_Order__c = order.Id,
+            Total_Price__c = 100.0
+        );
+        insert item;
+
+        Test.startTest();
+        OrderTotalUpdater.updateOrderTotal(new Set<Id>{order.Id});
+        Test.stopTest();
+
+        order = [SELECT Total_Amount__c, Payment_Status__c FROM AgriEdge_Order__c WHERE Id = :order.Id];
+        System.assertEquals(100.0, order.Total_Amount__c);
+        System.assertEquals('Pending', order.Payment_Status__c);
+    }
+}

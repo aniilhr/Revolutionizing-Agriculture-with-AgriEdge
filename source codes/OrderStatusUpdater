@@ -1,0 +1,22 @@
+public class OrderStatusUpdater {
+    public static void updateOrderStatus(Set<Id> orderIds) {
+        List<AgriEdge_Shipment__c> shipmentsToInsert = new List<AgriEdge_Shipment__c>();
+
+        for (AgriEdge_Order__c order : [
+            SELECT Id, Status__c 
+            FROM AgriEdge_Order__c 
+            WHERE Id IN :orderIds
+        ]) {
+            if (order.Status__c == 'Delivered') {
+                AgriEdge_Shipment__c shipment = new AgriEdge_Shipment__c();
+                shipment.Order__c = order.Id;
+                shipment.Status__c = 'Pending';
+                shipmentsToInsert.add(shipment);
+            }
+        }
+
+        if (!shipmentsToInsert.isEmpty()) {
+            insert shipmentsToInsert;
+        }
+    }
+}
