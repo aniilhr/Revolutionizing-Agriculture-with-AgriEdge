@@ -95,7 +95,7 @@ This project is built on the Salesforce platform to streamline the **Order Manag
 
 Watch the video walkthrough of the entire flow from creating an order to automatic shipment creation.
 
-*Link to demo video: [Coming Soon]*
+*Link to demo video: (https://drive.google.com/file/d/1LdIP3dUUkC3OqKPmntUWEXcjDc2_RhL8/view?usp=sharing)*
 
 ---
 
