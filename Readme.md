@@ -1,129 +1,129 @@
-# 🚜 AgriEdge Order & Shipment Automation – Salesforce Project
+<!-- Animated Header -->
+<h1 align="center">
+  🚜 AgriEdge Order & Shipment Automation  
+  <br>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=00C853&center=true&vCenter=true&width=600&lines=Salesforce+Order+%26+Shipment+Automation;Apex+Trigger+%26+Class+Implementation;Smart+Agri+CRM+System+🌾" alt="Typing Animation" />
+</h1>
 
-This project is built on the Salesforce platform to streamline the **Order Management and Shipment Process** for an agriculture-focused enterprise using **custom objects** and **Apex triggers**.
-
----
-
-## 📌 Table of Contents
-
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Custom Objects](#custom-objects)
-- [Apex Classes & Triggers](#apex-classes--triggers)
-- [Installation](#installation)
-- [Demo](#demo)
-- [Screenshots](#screenshots)
-- [Future Scope](#future-scope)
-- [Author](#author)
+<p align="center">
+  <img src="https://img.shields.io/badge/Salesforce-Apex-blue?logo=salesforce" />
+  <img src="https://img.shields.io/badge/Platform-Cloud%20CRM-lightblue?logo=icloud" />
+  <img src="https://img.shields.io/badge/Status-Completed-success" />
+  <img src="https://img.shields.io/badge/Language-Apex-yellow" />
+</p>
 
 ---
 
 ## 🌾 Project Overview
 
-**AgriEdge** is a custom Salesforce application designed to automate and manage the ordering and shipment of agricultural products. By leveraging Apex classes and triggers, the system ensures:
-
-- Automatic total amount calculation per order.
-- Shipment creation when an order is delivered.
-- Efficient data updates across related objects.
+**AgriEdge** is a Salesforce-based automation project that streamlines **Order Management and Shipment Processing** for an agricultural enterprise.  
+The system leverages **Apex triggers, classes, and custom objects** to automate total calculations and shipment creation — reducing manual effort and improving business efficiency.
 
 ---
 
 ## ✅ Features
 
-- Create **AgriEdge Orders** and associate multiple **Order Items**.
-- Automatically update **total order amount** when items are added or updated.
-- When order status is set to **Delivered**, auto-create **Shipment**.
-- Structured, reusable Apex code using helper classes.
+- 🌱 Create **AgriEdge Orders** and link multiple **Order Items**
+- 💰 Auto-calculate **total order amount** when items are added or updated  
+- 🚚 Auto-create **Shipment** when an order status is set to *Delivered*  
+- ♻️ Reusable and modular **Apex Helper Classes**  
+- 🧠 Real-time data consistency between **Orders**, **OrderItems**, and **Shipments**
 
 ---
 
 ## 🛠️ Technology Stack
 
-| Technology | Purpose                  |
-|------------|---------------------------|
-| Salesforce | Platform                  |
-| Apex       | Business Logic & Triggers |
-| SOQL       | Query Language            |
-| Lightning UI | Frontend Forms & Views  |
+| Technology | Purpose |
+|-------------|----------|
+| **Salesforce** | Cloud CRM Platform |
+| **Apex** | Business Logic & Trigger Processing |
+| **SOQL** | Querying Salesforce Data |
+| **Lightning UI** | Forms and Record Views |
 
 ---
 
 ## 📂 Custom Objects
 
-| Object Name                | Description                              |
-|---------------------------|------------------------------------------|
-| `AgriEdge_Order__c`        | Represents an order                     |
-| `AgriEdge_OrderItem__c`    | Line items within an order              |
-| `AgriEdge_Shipment__c`     | Shipment record linked to order         |
+| Object Name | Description |
+|--------------|--------------|
+| `AgriEdge_Order__c` | Represents an agricultural order |
+| `AgriEdge_OrderItem__c` | Line items associated with an order |
+| `AgriEdge_Shipment__c` | Shipment details linked to an order |
 
 ---
 
 ## 🧠 Apex Classes & Triggers
 
 ### 🔹 Triggers
-- `OrderItemTrigger`: Updates total order amount
-- `OrderTrigger`: Creates shipment when order status is "Delivered"
+- `OrderItemTrigger` → Updates total order amount when items are added or changed  
+- `OrderTrigger` → Creates shipment automatically when order is delivered  
 
 ### 🔹 Apex Classes
-- `OrderStatusUpdater`: Creates a shipment when an order is delivered
-- `OrderTotalUpdater`: Calculates and updates total order amount
+- `OrderStatusUpdater` → Handles shipment creation based on order status  
+- `OrderTotalUpdater` → Calculates and updates total order value  
 
 ---
 
-## 📦 Installation
+## ⚙️ Installation Guide
 
-1. Create the following custom objects:
-   - AgriEdge_Order__c
-   - AgriEdge_OrderItem__c
-   - AgriEdge_Shipment__c
+1. **Create Custom Objects**
+   - AgriEdge_Order__c  
+   - AgriEdge_OrderItem__c  
+   - AgriEdge_Shipment__c  
 
-2. Add necessary fields:
-   - Order → Status, Total Amount
-   - OrderItem → Quantity, Unit Price
-   - Shipment → Linked Order, Status
+2. **Add Fields**
+   - **Order** → Status, Total Amount  
+   - **OrderItem** → Quantity, Unit Price  
+   - **Shipment** → Linked Order, Status  
 
-3. Add Apex Triggers and Classes:
-   - `OrderItemTrigger`, `OrderTrigger`
-   - `OrderStatusUpdater`, `OrderTotalUpdater`
+3. **Deploy Apex Classes and Triggers**
+   - Add the Apex classes and triggers in Salesforce Setup → Apex Classes / Triggers.
 
-4. Deploy and test in Salesforce Developer Org or Sandbox.
+4. **Test the Flow**
+   - Create a new order → Add items → Mark order as “Delivered” → Shipment auto-creates.
 
 ---
 
 ## 🎬 Demo
 
-Watch the video walkthrough of the entire flow from creating an order to automatic shipment creation.
-
-*Link to demo video: (https://drive.google.com/file/d/1LdIP3dUUkC3OqKPmntUWEXcjDc2_RhL8/view?usp=sharing)*
+🎥 **[Watch Demo Video Here](https://drive.google.com/file/d/1LdIP3dUUkC3OqKPmntUWEXcjDc2_RhL8/view?usp=sharing)**  
+> Demonstrates the complete flow from creating an order to automatic shipment creation.
 
 ---
 
 ## 📸 Screenshots
 
-- ✅ Order Creation Form
-- ✅ Adding Order Items
-- ✅ Auto-calculated Total
-- ✅ Shipment Record Auto-Creation
-- ✅ Final List Views for Orders & Shipments
+| Step | Screenshot |
+|------|-------------|
+| 🧾 Order Creation | ![Order](https://img.icons8.com/color/48/000000/order-history.png) |
+| ➕ Add Order Items | ![Item](https://img.icons8.com/color/48/000000/add-to-cart.png) |
+| 💰 Auto Total Update | ![Calc](https://img.icons8.com/color/48/000000/calculator.png) |
+| 🚚 Shipment Auto-Creation | ![Ship](https://img.icons8.com/color/48/000000/delivery.png) |
+| 📊 Final View | ![List](https://img.icons8.com/color/48/000000/list.png) |
 
 ---
 
 ## 🔮 Future Scope
 
-- Add **Email Notification** to supplier/customer after shipment.
-- Introduce **Delivery Tracking** via custom Lightning components.
-- Enable **Reports and Dashboards** for Admins to monitor shipments.
-- Use **Flows** to reduce Apex dependency for certain logic.
+- ✉️ Email notifications to suppliers/customers after shipment creation  
+- 🛰️ Real-time **delivery tracking** using Lightning Components  
+- 📊 Add **Reports and Dashboards** for analytics  
+- ⚡ Replace Apex logic with **Flows** for easier maintenance  
 
 ---
 
 ## 👨‍💻 Author
 
 **H Rajanna Gari Anil Kumar**  
-📧 ania08333@gmail.com  
+📍 Anantapur, Andhra Pradesh  
+📧 [ania08333@gmail.com](mailto:ania08333@gmail.com)  
 🔗 [LinkedIn](https://www.linkedin.com/in/hranil)  
-🌐 [Portfolio](https://anilhr.ccbp.tech/)
+🌐 [Portfolio](https://anilhr.ccbp.tech/)  
 
 ---
 
+<p align="center">
+  <b>⭐ If you liked this project, don't forget to star the repository! ⭐</b>  
+  <br><br>
+  <img src="https://github.com/rajaprerak/rajaprerak/blob/master/assets/animated-flame.gif" width="60" height="60" />
+</p>
